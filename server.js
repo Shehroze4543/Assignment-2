@@ -15,6 +15,11 @@ app.get("/tip/:total/:tipPercentage", (req, res) => {
   res.send(...bill);
 });
 
+app.get("/magic/:string", (req, res) => {
+  const username = req.params.string.replace(/%20/g, " ");
+  res.send(`<h1>${username}</h1>`);
+});
+
 app.listen(3010, function () {
   console.log("Listening on Port 3010");
 });
